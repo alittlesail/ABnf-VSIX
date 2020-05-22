@@ -1,0 +1,43 @@
+
+using Microsoft.VisualStudio.Language.Intellisense;
+using Microsoft.VisualStudio.Shell.Interop;
+using Microsoft.VisualStudio.Text.Tagging;
+using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+
+namespace ALittle
+{
+    public class @@LANGUAGE@@Factory : ABnfFactory
+    {   
+        Dictionary<string, Func<ABnfFactory, ABnfFile, int, int, int, string, ABnfNodeElement>> m_create_map = new Dictionary<string, Func<ABnfFactory, ABnfFile, int, int, int, string, ABnfNodeElement>>();
+
+        public @@LANGUAGE@@Factory()
+        {
+@@ELEMENT_ADD_CREATE@@
+        }
+
+        public override ABnfNodeElement CreateNodeElement(ABnfFile file, int line, int col, int offset, string type)
+        {
+            Func<ABnfFactory, ABnfFile, int, int, int, string, ABnfNodeElement> func;
+            if (!m_create_map.TryGetValue(type, out func)) return null;
+            return func(this, file, line, col, offset, type);
+        }
+
+        public override ABnfKeyElement CreateKeyElement(ABnfFile file, int line, int col, int offset, string type)
+        {
+            return new @@LANGUAGE@@KeyElement(this, file, line, col, offset, type);
+        }
+
+        public override ABnfStringElement CreateStringElement(ABnfFile file, int line, int col, int offset, string type)
+        {
+            return new @@LANGUAGE@@StringElement(this, file, line, col, offset, type);
+        }
+
+        public override ABnfRegexElement CreateRegexElement(ABnfFile file, int line, int col, int offset, string type, Regex regex)
+        {
+            return new @@LANGUAGE@@RegexElement(this, file, line, col, offset, type, regex);
+        }
+    }
+}
+

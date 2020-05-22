@@ -1,0 +1,16 @@
+        private bool m_flag_@@NAME@@ = false;
+        private @@LANGUAGE@@@@NAME@@Element m_cache_@@NAME@@ = null;
+        public @@LANGUAGE@@@@NAME@@Element Get@@NAME@@()
+        {
+            if (m_flag_@@NAME@@) return m_cache_@@NAME@@;
+            m_flag_@@NAME@@ = true;
+            foreach (var child in m_childs)
+            {
+                if (child is @@LANGUAGE@@@@NAME@@Element)
+                {
+                    m_cache_@@NAME@@ = child as @@LANGUAGE@@@@NAME@@Element;
+                    break;
+                }
+            }
+            return m_cache_@@NAME@@;
+        }

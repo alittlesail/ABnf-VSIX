@@ -1,0 +1,4 @@
+﻿; Associate icons with file extensions in Solution Explorer
+; Find more icons at http://glyphlist.azurewebsites.net/knownmonikers/
+[$RootKey$\ShellFileAssociations\.abnf]
+"DefaultIconMoniker"="5492d2d8-2099-452f-b50d-4f5aeda5b235:0"

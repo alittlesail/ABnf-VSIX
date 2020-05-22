@@ -1,0 +1,16 @@
+        List<@@LANGUAGE@@@@NAME@@Element> m_list_@@NAME@@ = null;
+        public List<@@LANGUAGE@@@@NAME@@Element> Get@@NAME@@List()
+        {
+            var list = new List<@@LANGUAGE@@@@NAME@@Element>();
+            if (m_list_@@NAME@@ == null)
+            {
+                m_list_@@NAME@@ = new List<@@LANGUAGE@@@@NAME@@Element>();
+                foreach (var child in m_childs)
+                {
+                    if (child is @@LANGUAGE@@@@NAME@@Element)
+                        m_list_@@NAME@@.Add(child as @@LANGUAGE@@@@NAME@@Element);
+                }   
+            }
+            list.AddRange(m_list_@@NAME@@);
+            return list;
+        }
