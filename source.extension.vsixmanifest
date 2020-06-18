@@ -11,7 +11,7 @@
 //***************************************************************************-->
 <PackageManifest Version="2.0.0" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
     <Metadata>
-        <Identity Id="c729d6b2-f512-49ed-893d-a8f61f25db98" Version="6.13" Language="en-US" Publisher="ouxingfan" />
+        <Identity Id="c729d6b2-f512-49ed-893d-a8f61f25db98" Version="6.14" Language="en-US" Publisher="ouxingfan" />
         <DisplayName>ABnf</DisplayName>
         <Description xml:space="preserve">abnf</Description>
     </Metadata>
